@@ -1,0 +1,41 @@
+// Base class
+abstract class Payment {
+    public abstract void processPayment();
+}
+
+// Subclass for UPI Payment
+class UPIPayment extends Payment {
+    @Override
+    public void processPayment() {
+        System.out.println("Processing UPI payment...");
+    }
+}
+
+// Subclass for Cash Payment
+class CashPayment extends Payment {
+    @Override
+    public void processPayment() {
+        System.out.println("Processing Cash payment...");
+    }
+}
+
+// Subclass for Credit Card Payment
+class CreditCardPayment extends Payment {
+    @Override
+    public void processPayment() {
+        System.out.println("Processing Credit Card payment...");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Payment upiPayment = new UPIPayment();
+        Payment cashPayment = new CashPayment();
+        Payment creditCardPayment = new CreditCardPayment();
+
+        upiPayment.processPayment();
+        cashPayment.processPayment();
+        creditCardPayment.processPayment();
+    }
+}
