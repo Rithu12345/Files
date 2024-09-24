@@ -1,0 +1,48 @@
+import java.util.*;
+class Employee {
+    private String name;
+    private int id;
+
+    public Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+}
+
+class EmployeeRepository {
+    public void saveEmployee(Employee employee) {
+        // Logic to save employee details to a database
+        System.out.println("Saving employee " + employee.getName() + " to database...");
+    }
+}
+
+// Class for handling salary calculations
+class SalaryCalculator {
+    public double calculateSalary(Employee employee) {
+        // Logic to calculate salary
+        System.out.println("Calculating salary for employee " + employee.getName() + "...");
+        return 50000.00;  // Example salary
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee("John Doe", 123);
+
+        // Separate class for saving employee
+        EmployeeRepository employeeRepository = new EmployeeRepository();
+        employeeRepository.saveEmployee(employee);
+
+        // Separate class for salary calculation
+        SalaryCalculator salaryCalculator = new SalaryCalculator();
+        double salary = salaryCalculator.calculateSalary(employee);
+        System.out.println("Salary: " + salary);
+    }
+}
